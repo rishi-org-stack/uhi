@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Vue Todo</title>
+</head>
+
+<body style="background-color: black;background-image: url('images/bg-desktop-dark.jpg'); background-size:1400px 250px;background-repeat:no-repeat;">
+    <!-- <div style="background-color: red;width: 100%;height: 60%;"> -->
+    <div id="app" class="col-md-6" style="margin: 0 auto;padding: 1rem;margin-top: 3rem;width: 40%;">
+
+        <h2 style="text-align: left;color: white;">{{heading}}</h2>
+        <div style="margin-top:2rem;">
+
+            <form action="" @submit.prevent="modify">
+
+                <input type="" v-model="newtodo" v-on:enter="modify" style="width: 100%;height: 40%;background-color:rgb(49, 45, 45) ;"placeholder="Create a new todo..">
+
+            </form>
+
+        </div>
+
+
+        <div style="margin-top: 2rem;">
+
+            <li class="list-group-item" v-for="todo in todos" style="background-color: rgb(66, 62, 62);">
+                <input type="checkbox" name="com" id="" v-model="todo.Completed">
+                <label for="com" style="color:white; margin-left: 1rem;">{{todo.Text}}</label>
+            </li>
+
+            <div style="display: flex;border-style: solid;border-color: rgb(66, 62, 62);height: 35px; background-color: rgb(66, 62, 62);">
+                    <div style="flex: 10%; color: aliceblue;font-size: small;margin-top: auto;" >
+                        {{left}} items left
+                    </div>
+    
+                    <div style="flex: 10%; color: aliceblue;font-size: small;margin-top: auto;">
+                        All
+                    </div>
+    
+                    <div style="flex: 10%; color: aliceblue;font-size: small;margin-top: auto;">
+                        Active
+                    </div>
+    
+                    <div style="flex: 10%; color: aliceblue; font-size: small; margin-top: auto;">
+                        Completed
+                    </div>
+    
+                    <div style="flex: 20%; color: aliceblue; font-size: small; margin-top: auto;" v-on:click = "deletecompleted">
+                        Clear Completed
+                    </div>
+            </div>
+
+        </div>
+
+        <!-- <p style="color: aliceblue;">{{todos}}</p> -->
+    </div>
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
